@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Sign up or log in to create an account and explore the platform.</p>
+    <a class="btn btn-primary" href="/Account/Register">Sign Up</a>
+    <a class="btn btn-secondary" href="/Identity/Account/Login">Log In</a>
+</div>
+
+<div class="uploaded-clips">
+    <h2>Uploaded Clips</h2>
+    @if (Model.Clips != null && Model.Clips.Any()) {
+        <ul>
+            @foreach (var clip in Model.Clips) {
+                <li>
+                    <h3>@clip.Title</h3>
+                    <p>@clip.Description</p>
+                    <video width="320" height="240" controls>
+                        <source src="@Url.Content($"~/uploads/{clip.FileName}")" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </li>
+            }
+        </ul>
+    } else {
+        <p>No clips have been uploaded yet.</p>
+    }
+</div>
