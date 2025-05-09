@@ -1,0 +1,44 @@
+@page
+@model PlayNexus.Pages.Forums.IndexModel
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+<h1>Forums</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Topic">Topic</label>
+        <input type="text" id="Topic" name="Topic" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="PostContent">Post Content</label>
+        <textarea id="PostContent" name="PostContent" class="form-control" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Post</button>
+</form>
+
+<hr />
+
+<h2>Existing Topics and Posts</h2>
+
+@if (Model.Posts != null && Model.Posts.Any())
+{
+    <ul>
+        @foreach (var forum in Model.Posts)
+        {
+            <li>
+                <h3>@forum.Topic</h3>
+                <ul>
+                    @foreach (var post in forum.Posts)
+                    {
+                        <li>@post</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No forum posts yet.</p>
+}

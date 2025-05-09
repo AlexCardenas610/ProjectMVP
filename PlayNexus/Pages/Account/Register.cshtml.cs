@@ -37,7 +37,7 @@ namespace PlayNexus.Pages.Account {
             if (result.Succeeded) {
                 ViewData["SuccessMessage"] = "You have successfully signed up!";
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToPage("/Index");
+                return Page();
             } else if (result.Errors.Any(e => e.Code == "DuplicateUserName" || e.Code == "DuplicateEmail")) {
                 ViewData["ErrorMessage"] = "An account with this email already exists.";
                 return Page();

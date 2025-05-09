@@ -1,0 +1,77 @@
+@page
+@model PlayNexus.Pages.Profile.IndexModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2>@Model.CurrentUser?.UserName</h2>
+                    <p class="text-muted">User Profile</p>
+                    <!-- Placeholder for profile picture -->
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Profile Picture" />
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header">
+                    Friends
+                </div>
+                <ul class="list-group list-group-flush">
+                    @if (Model.Friends != null && Model.Friends.Any())
+                    {
+                        foreach (var friend in Model.Friends)
+                        {
+                            <li class="list-group-item">@friend.UserName</li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item">No friends added yet.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <form method="post" asp-page-handler="UpdateProfile">
+                <div class="card">
+                    <div class="card-header">
+                        Edit Profile
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label asp-for="Biography" class="form-label">Biography</label>
+                            <textarea asp-for="Biography" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="GamingInterests" class="form-label">Gaming Interests</label>
+                            <textarea asp-for="GamingInterests" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    Viewing Activity
+                </div>
+                <ul class="list-group list-group-flush">
+                    @if (Model.ViewingActivity != null && Model.ViewingActivity.Any())
+                    {
+                        foreach (var activity in Model.ViewingActivity)
+                        {
+                            <li class="list-group-item">@activity</li>
+                        }
+                    }
+                    else
+                    {
+                        <li class="list-group-item">No recent activity.</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
