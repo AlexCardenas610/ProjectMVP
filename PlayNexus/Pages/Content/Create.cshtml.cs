@@ -31,8 +31,12 @@ namespace PlayNexus.Pages.Content {
                 CreatedAt = DateTime.Now
             };
 
-            // Logic to handle file upload (simplified for now)
+            // Logic to handle file upload with 50MB size limit
             if (FilePath != null) {
+                if (FilePath.Length > 50 * 1024 * 1024) {
+                    ModelState.AddModelError(string.Empty, "File size must be 50MB or less.");
+                    return Page();
+                }
                 var filePath = Path.Combine("wwwroot/uploads", FilePath.FileName);
                 using (var stream = new FileStream(filePath, FileMode.Create)) {
                     FilePath.CopyTo(stream);

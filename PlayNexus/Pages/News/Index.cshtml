@@ -1,0 +1,22 @@
+@page
+@model PlayNexus.Pages.News.IndexModel
+
+<h1>News</h1>
+
+@if (Model.NewsArticles != null && Model.NewsArticles.Any())
+{
+    <ul>
+        @foreach (var article in Model.NewsArticles)
+        {
+            <li>
+                <h3>@article.Headline</h3>
+                <p>@article.Content</p>
+                <small>Published at: @article.PublishedAt.ToString("g")</small>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No news articles available.</p>
+}
