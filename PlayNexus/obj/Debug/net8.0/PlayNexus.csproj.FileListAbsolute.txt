@@ -69,3 +69,10 @@
 /workspaces/ProjectMVP/PlayNexus/obj/Debug/net8.0/PlayNexus.pdb
 /workspaces/ProjectMVP/PlayNexus/obj/Debug/net8.0/PlayNexus.genruntimeconfig.cache
 /workspaces/ProjectMVP/PlayNexus/obj/Debug/net8.0/ref/PlayNexus.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/Azure.Core.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/Azure.Storage.Blobs.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/Azure.Storage.Common.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/System.ClientModel.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/System.IO.Hashing.dll
+/workspaces/ProjectMVP/PlayNexus/bin/Debug/net8.0/System.Memory.Data.dll

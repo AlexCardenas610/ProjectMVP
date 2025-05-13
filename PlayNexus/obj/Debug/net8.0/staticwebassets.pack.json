@@ -253,6 +253,14 @@
       "PackagePath": "staticwebassets/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_YmpNelJ3.jpeg"
     },
     {
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/.gitkeep",
+      "PackagePath": "staticwebassets/uploads/.gitkeep"
+    },
+    {
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4",
+      "PackagePath": "staticwebassets/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.PlayNexus.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

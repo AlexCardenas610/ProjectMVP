@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UJGKfLYsXrdk8/sv/n+tw5DvgVcY6WMl/6cshi+kDLs=",
+  "Hash": "w760F+q3FopJMZjIavIh3DZYWGsTJ6X4ifhaeyPK10E=",
   "Source": "PlayNexus",
   "BasePath": "_content/PlayNexus",
   "Mode": "Default",
@@ -1231,6 +1231,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_YmpNelJ3.jpeg"
+    },
+    {
+      "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/.gitkeep",
+      "SourceId": "PlayNexus",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/ProjectMVP/PlayNexus/wwwroot/",
+      "BasePath": "_content/PlayNexus",
+      "RelativePath": "uploads/.gitkeep",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/.gitkeep"
+    },
+    {
+      "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4",
+      "SourceId": "PlayNexus",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/ProjectMVP/PlayNexus/wwwroot/",
+      "BasePath": "_content/PlayNexus",
+      "RelativePath": "uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4"
     }
   ]
 }
