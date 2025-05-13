@@ -11,6 +11,7 @@
         <tr>
             <th>Username</th>
             <th>Email</th>
+            <th>Registered On</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
             <tr>
                 <td>@user.UserName</td>
                 <td>@user.Email</td>
+                <td>@user.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
             </tr>
         }
     </tbody>

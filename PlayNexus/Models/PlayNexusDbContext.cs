@@ -20,5 +20,10 @@ namespace PlayNexus.Models {
                 .WithMany()
                 .HasForeignKey(log => log.UserId);
         }
+
+        public List<UserSignInLog> GetAllUserSignInLogs()
+        {
+            return UserSignInLogs.ToList();
+        }
     }
 }

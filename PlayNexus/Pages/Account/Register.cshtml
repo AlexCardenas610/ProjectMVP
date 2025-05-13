@@ -1,49 +1,45 @@
-@page "/Account/Register"
+@page
 @model PlayNexus.Pages.Account.RegisterModel
-
-<h1>Sign Up</h1>
-
-@if (ViewData["ErrorMessage"] != null) {
-    <script>
-        alert("@ViewData["ErrorMessage"]");
-    </script>
+@{
+    ViewData["Title"] = "Register";
 }
 
-@if (ViewData["SuccessMessage"] != null) {
-    <script>
-        alert("@ViewData["SuccessMessage"]");
-    </script>
-}
+<h2>Register</h2>
 
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert alert-danger" role="alert">
-        @foreach (var modelState in ViewData.ModelState.Values)
-        {
-            foreach (var error in modelState.Errors)
-            {
-                <p>@error.ErrorMessage</p>
-            }
-        }
+<form method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="invalid-feedback"></span>
     </div>
-}
-
-<form method="post">
-    <div class="form-group">
-        <label for="Username">Username</label>
-        <input type="text" id="Username" name="Username" class="form-control" required />
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="invalid-feedback"></span>
     </div>
-    <div class="form-group">
-        <label for="Email">Email</label>
-        <input type="email" id="Email" name="Email" class="form-control" required />
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" type="password" class="form-control" title="Password must be at least 6 characters and contain a special character." required />
+        <span asp-validation-for="Password" class="invalid-feedback"></span>
     </div>
-    <div class="form-group">
-        <label for="Password">Password</label>
-        <input type="password" id="Password" name="Password" class="form-control" required />
+    <div class="mb-3">
+        <label asp-for="ConfirmPassword" class="form-label"></label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" required />
+        <span asp-validation-for="ConfirmPassword" class="invalid-feedback"></span>
     </div>
-    <div class="form-group">
-        <label for="ConfirmPassword">Confirm Password</label>
-        <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <button type="submit" class="btn btn-primary">Register</button>
 </form>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3" role="alert">@ViewData["ErrorMessage"]</div>
+}
+@if (ViewData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success mt-3" role="alert">@ViewData["SuccessMessage"]</div>
+    <script>
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 2000);
+    </script>
+}

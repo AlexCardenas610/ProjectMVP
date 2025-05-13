@@ -4,15 +4,15 @@
 <h1>Log In</h1>
 
 @if (ViewData["ErrorMessage"] != null) {
-    <script>
-        alert("@ViewData["ErrorMessage"]");
-    </script>
+    <div class="alert alert-danger" role="alert">
+        @ViewData["ErrorMessage"]
+    </div>
 }
 
 @if (ViewData["SuccessMessage"] != null) {
-    <script>
-        alert("@ViewData["SuccessMessage"]");
-    </script>
+    <div class="alert alert-success" role="alert">
+        @ViewData["SuccessMessage"]
+    </div>
 }
 
 <form method="post">

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PlayNexus.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace PlayNexus.Pages.Admin {
     public class UsersModel : PageModel {
@@ -14,7 +15,11 @@ namespace PlayNexus.Pages.Admin {
         }
 
         public void OnGet() {
-            Users = _context.Users.ToList();
+            // Example: get users registered in the last 7 days
+            DateTime recentThreshold = DateTime.UtcNow.AddDays(-7);
+            Users = _context.Users
+                .Where(u => u.CreatedDate >= recentThreshold)
+                .ToList();
         }
     }
 }

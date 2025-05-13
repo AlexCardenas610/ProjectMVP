@@ -7,17 +7,28 @@ namespace PlayNexus.Pages;
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
+    private readonly IWebHostEnvironment _environment;
 
     public List<HighlightsModel> Clips { get; set; } = new List<HighlightsModel>();
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(ILogger<IndexModel> logger, IWebHostEnvironment environment)
     {
         _logger = logger;
+        _environment = environment;
     }
 
-    public void OnGet()
+    public IActionResult OnGet()
     {
-        // Example: Populate clips with sample data
-        Clips.Add(new HighlightsModel { Id = 1, Title = "Sample Video", Description = "A sample video description", CreatedAt = DateTime.Now });
+        try
+        {
+            // Example: Populate clips with sample data
+            Clips.Add(new HighlightsModel { Id = 1, Title = "Sample Video", Description = "A sample video description", CreatedAt = DateTime.Now });
+            return Page();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while retrieving clips.");
+            return StatusCode(500);
+        }
     }
 }
