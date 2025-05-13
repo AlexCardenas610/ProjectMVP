@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlayNexus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+184f4684661d9c87adbc79193a08ed12e5e95360")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6dafe336d8d2e9a0391b678ea70845ad130af42")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlayNexus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlayNexus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
