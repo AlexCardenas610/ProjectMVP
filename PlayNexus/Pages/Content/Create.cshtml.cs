@@ -1,20 +1,24 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authorization;
 using PlayNexus.Models;
 using HighlightsModel = PlayNexus.Models.Highlights;
 
 namespace PlayNexus.Pages.Content {
+    [Authorize]
+    [RequestSizeLimit(104857600)] // 100 MB
     public class CreateModel : PageModel {
         private readonly PlayNexusDbContext _context;
 
         [BindProperty]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [BindProperty]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [BindProperty]
-        public IFormFile FilePath { get; set; }
+        public IFormFile? FilePath { get; set; }
 
         public CreateModel(PlayNexusDbContext context) {
             _context = context;
@@ -26,8 +30,8 @@ namespace PlayNexus.Pages.Content {
             }
 
             var content = new HighlightsModel {
-                Title = Title,
-                Description = Description,
+                Title = Title ?? string.Empty,
+                Description = Description ?? string.Empty,
                 CreatedAt = DateTime.Now
             };
 

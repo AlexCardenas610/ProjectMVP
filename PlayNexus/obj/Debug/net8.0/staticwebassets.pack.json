@@ -245,6 +245,14 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_IMG_2633.jpg",
+      "PackagePath": "staticwebassets/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_IMG_2633.jpg"
+    },
+    {
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_YmpNelJ3.jpeg",
+      "PackagePath": "staticwebassets/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_YmpNelJ3.jpeg"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.PlayNexus.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

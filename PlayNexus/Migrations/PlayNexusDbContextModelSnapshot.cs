@@ -219,27 +219,24 @@ namespace PlayNexus.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Biography")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FriendsJson")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GamingInterests")
-                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProfilePictureUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

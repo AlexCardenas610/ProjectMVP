@@ -80,12 +80,14 @@ namespace PlayNexus.Pages.Account
                 return Page();
             }
 
+            // Hash the password before storing
+            var passwordHasher = new PasswordHasher<User>();
             var user = new User
             {
                 UserName = Username,
-                Email = Email,
-                PasswordHash = Password // Store plaintext password (not recommended)
+                Email = Email
             };
+            user.PasswordHash = passwordHasher.HashPassword(user, Password); // Securely hash the password
 
             var result = await _userManager.CreateAsync(user);
 

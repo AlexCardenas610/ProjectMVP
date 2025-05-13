@@ -48,12 +48,16 @@ namespace PlayNexus.Pages.Account
                 return Page();
             }
 
-            // Debug: Log entered and stored password for troubleshooting
-            _logger.LogInformation($"Entered password: '{Password}'");
-            _logger.LogInformation($"Stored password: '{user.PasswordHash}'");
-
-            // Compare plaintext password directly (for testing purposes only)
-            if (user.PasswordHash != Password)
+            // Use ASP.NET Core's PasswordHasher to verify the password
+            var passwordHasher = new PasswordHasher<User>();
+            if (string.IsNullOrEmpty(user.PasswordHash))
+            {
+                _logger.LogWarning("Password is not set for this user.");
+                ViewData["ErrorMessage"] = "Password is not set for this user.";
+                return Page();
+            }
+            var passwordVerificationResult = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, Password);
+            if (passwordVerificationResult != PasswordVerificationResult.Success)
             {
                 _logger.LogWarning("Password is incorrect.");
                 ViewData["ErrorMessage"] = "Password is incorrect.";
@@ -61,7 +65,7 @@ namespace PlayNexus.Pages.Account
             }
 
             // Use UserName for sign-in (not Email)
-            var signInResult = await _signInManager.PasswordSignInAsync(user.UserName, Password, isPersistent: false, lockoutOnFailure: false);
+            var signInResult = await _signInManager.PasswordSignInAsync(user.UserName ?? string.Empty, Password, isPersistent: false, lockoutOnFailure: false);
             _logger.LogInformation($"SignIn result: {signInResult.Succeeded}, IsLockedOut: {signInResult.IsLockedOut}, IsNotAllowed: {signInResult.IsNotAllowed}, RequiresTwoFactor: {signInResult.RequiresTwoFactor}");
 
             if (signInResult.Succeeded)

@@ -1,20 +1,33 @@
 @page
 @model PlayNexus.Pages.Content.CreateModel
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
 
-<h1>Create Content</h1>
-
-<form method="post">
-    <div class="form-group">
-        <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" class="form-control" />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Create Content</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="Title" class="form-label">Title</label>
+                            <input type="text" id="Title" name="Title" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Description" class="form-label">Description</label>
+                            <textarea id="Description" name="Description" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="FilePath" class="form-label">Upload Video</label>
+                            <input type="file" id="FilePath" name="FilePath" class="form-control" />
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Create</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="Description">Description</label>
-        <textarea id="Description" name="Description" class="form-control"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="FilePath">Upload Video</label>
-        <input type="file" id="FilePath" name="FilePath" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+</div>
