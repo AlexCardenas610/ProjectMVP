@@ -15,13 +15,15 @@ namespace PlayNexus.Pages.Forums {
 
         [BindProperty]
         [Required]
-        public string Topic { get; set; }
+        public string? Topic { get; set; }
 
         [BindProperty]
         [Required]
-        public string PostContent { get; set; }
+        public string? PostContent { get; set; }
 
-        public List<PlayNexus.Models.Forums> Posts { get; set; }
+        public List<PlayNexus.Models.Forums>? Posts { get; set; }
+
+        public List<ForumPost> ForumPosts { get; set; } = new List<ForumPost>();
 
         public void OnGet() {
             Posts = _context.Forums.OrderByDescending(p => p.Id).ToList();
@@ -36,16 +38,41 @@ namespace PlayNexus.Pages.Forums {
             var forum = _context.Forums.FirstOrDefault(f => f.Topic == Topic);
             if (forum == null) {
                 forum = new PlayNexus.Models.Forums {
-                    Topic = Topic,
-                    Posts = new List<string> { PostContent }
+                    Topic = Topic ?? string.Empty,
+                    UserName = User.Identity?.Name,
+                    Content = PostContent ?? string.Empty,
+                    CreatedAt = DateTime.Now,
+                    Replies = new List<ForumReply>()
                 };
                 _context.Forums.Add(forum);
             } else {
-                forum.Posts.Add(PostContent);
-                _context.Forums.Update(forum);
+                // Optionally update content or ignore duplicate topic
             }
             _context.SaveChanges();
 
+            return RedirectToPage();
+        }
+
+        public IActionResult OnPostReply(int forumId, string ReplyContent) {
+            var forum = _context.Forums.FirstOrDefault(f => f.Id == forumId);
+            if (forum != null && User.Identity?.Name != forum.UserName) {
+                forum.Replies.Add(new ForumReply {
+                    UserName = User.Identity?.Name,
+                    Content = ReplyContent,
+                    CreatedAt = DateTime.Now
+                });
+                _context.Forums.Update(forum);
+                _context.SaveChanges();
+            }
+            return RedirectToPage();
+        }
+
+        public IActionResult OnPostDelete(int forumId) {
+            var forum = _context.Forums.FirstOrDefault(f => f.Id == forumId);
+            if (forum != null && forum.UserName == User.Identity?.Name) {
+                _context.Forums.Remove(forum);
+                _context.SaveChanges();
+            }
             return RedirectToPage();
         }
     }

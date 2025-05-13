@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w760F+q3FopJMZjIavIh3DZYWGsTJ6X4ifhaeyPK10E=",
+  "Hash": "TrFdZgTEKLCIeGiV572X9tR7qVg8TfoUwoa/CjQiPIE=",
   "Source": "PlayNexus",
   "BasePath": "_content/PlayNexus",
   "Mode": "Default",
@@ -1195,6 +1195,25 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
     },
     {
+      "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/43cadb37-6b00-423d-beaf-a969aa6c7b2e_IMG_2633.jpg",
+      "SourceId": "PlayNexus",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/ProjectMVP/PlayNexus/wwwroot/",
+      "BasePath": "_content/PlayNexus",
+      "RelativePath": "profilepics/43cadb37-6b00-423d-beaf-a969aa6c7b2e_IMG_2633.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profilepics/43cadb37-6b00-423d-beaf-a969aa6c7b2e_IMG_2633.jpg"
+    },
+    {
       "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_IMG_2633.jpg",
       "SourceId": "PlayNexus",
       "SourceType": "Discovered",
@@ -1233,6 +1252,25 @@
       "OriginalItemSpec": "wwwroot/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_YmpNelJ3.jpeg"
     },
     {
+      "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/c70d40ae-eea2-486d-9b09-d2ad67473934_IMG_2633.jpg",
+      "SourceId": "PlayNexus",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/ProjectMVP/PlayNexus/wwwroot/",
+      "BasePath": "_content/PlayNexus",
+      "RelativePath": "profilepics/c70d40ae-eea2-486d-9b09-d2ad67473934_IMG_2633.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/profilepics/c70d40ae-eea2-486d-9b09-d2ad67473934_IMG_2633.jpg"
+    },
+    {
       "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/.gitkeep",
       "SourceId": "PlayNexus",
       "SourceType": "Discovered",
@@ -1250,25 +1288,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/uploads/.gitkeep"
-    },
-    {
-      "Identity": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4",
-      "SourceId": "PlayNexus",
-      "SourceType": "Discovered",
-      "ContentRoot": "/workspaces/ProjectMVP/PlayNexus/wwwroot/",
-      "BasePath": "_content/PlayNexus",
-      "RelativePath": "uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4"
     }
   ]
 }

@@ -104,6 +104,25 @@ namespace PlayNexus.Pages.Account
 
             if (result.Succeeded)
             {
+                // Create a profile for the new user
+                using (var scope = HttpContext.RequestServices.CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetService(typeof(PlayNexusDbContext)) as PlayNexusDbContext;
+                    if (dbContext != null)
+                    {
+                        var profile = new PlayNexus.Models.Profile
+                        {
+                            UserId = user.Id,
+                            Username = user.UserName,
+                            Email = user.Email,
+                            Biography = string.Empty,
+                            GamingInterests = string.Empty,
+                            ProfilePictureUrl = null
+                        };
+                        dbContext.Profiles.Add(profile);
+                        dbContext.SaveChanges();
+                    }
+                }
                 _logger.LogInformation("User created a new account successfully.");
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 ViewData["SuccessMessage"] = "Account created successfully! Redirecting to home...";

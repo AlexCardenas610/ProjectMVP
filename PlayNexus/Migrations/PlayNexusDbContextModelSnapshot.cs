@@ -145,18 +145,47 @@ namespace PlayNexus.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PlayNexus.Models.ForumReply", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("ForumsId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ForumsId");
+
+                    b.ToTable("ForumReply");
+                });
+
             modelBuilder.Entity("PlayNexus.Models.Forums", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("PostsJson")
-                        .IsRequired()
+                    b.Property<string>("Content")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Topic")
-                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -386,6 +415,13 @@ namespace PlayNexus.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PlayNexus.Models.ForumReply", b =>
+                {
+                    b.HasOne("PlayNexus.Models.Forums", null)
+                        .WithMany("Replies")
+                        .HasForeignKey("ForumsId");
+                });
+
             modelBuilder.Entity("PlayNexus.Models.UserSignInLog", b =>
                 {
                     b.HasOne("PlayNexus.Models.User", "User")
@@ -395,6 +431,11 @@ namespace PlayNexus.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PlayNexus.Models.Forums", b =>
+                {
+                    b.Navigation("Replies");
                 });
 #pragma warning restore 612, 618
         }

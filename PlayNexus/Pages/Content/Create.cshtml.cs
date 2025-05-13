@@ -62,7 +62,7 @@ namespace PlayNexus.Pages.Content {
                 using (var stream = new FileStream(filePath, FileMode.Create)) {
                     await FilePath.CopyToAsync(stream);
                 }
-                content.FileName = uniqueFileName;
+                content.FileName = "/uploads/" + uniqueFileName;
             }
 
             _context.Contents.Add(content);

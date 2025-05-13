@@ -28,12 +28,35 @@
         {
             <li>
                 <h3>@forum.Topic</h3>
-                <ul>
-                    @foreach (var post in forum.Posts)
-                    {
-                        <li>@post</li>
-                    }
-                </ul>
+                <div><b>@forum.UserName</b> (@forum.CreatedAt.ToShortDateString()): @forum.Content</div>
+                @if (!string.IsNullOrEmpty(User?.Identity?.Name) && User.Identity.Name != forum.UserName)
+                {
+                    <form method="post" asp-page-handler="Reply" asp-route-forumId="@forum.Id">
+                        <div class="form-group">
+                            <label for="ReplyContent_@forum.Id">Reply</label>
+                            <textarea id="ReplyContent_@forum.Id" name="ReplyContent" class="form-control" rows="2" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-success mt-1">Reply</button>
+                    </form>
+                }
+                @if (!string.IsNullOrEmpty(User?.Identity?.Name) && User.Identity.Name == forum.UserName)
+                {
+                    <form method="post" asp-page-handler="Delete" asp-route-forumId="@forum.Id" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                        <button type="submit" class="btn btn-danger btn-sm mt-1">Delete</button>
+                    </form>
+                    <form method="get" asp-page="Edit" asp-route-forumId="@forum.Id">
+                        <button type="submit" class="btn btn-warning btn-sm mt-1">Edit</button>
+                    </form>
+                }
+                <div class="mt-2">
+                    <strong>Replies:</strong>
+                    <ul>
+                        @foreach (var reply in forum.Replies)
+                        {
+                            <li><b>@reply.UserName</b> (@reply.CreatedAt.ToShortDateString()): @reply.Content</li>
+                        }
+                    </ul>
+                </div>
             </li>
         }
     </ul>

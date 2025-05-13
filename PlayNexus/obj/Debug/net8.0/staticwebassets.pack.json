@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/43cadb37-6b00-423d-beaf-a969aa6c7b2e_IMG_2633.jpg",
+      "PackagePath": "staticwebassets/profilepics/43cadb37-6b00-423d-beaf-a969aa6c7b2e_IMG_2633.jpg"
+    },
+    {
       "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_IMG_2633.jpg",
       "PackagePath": "staticwebassets/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_IMG_2633.jpg"
     },
@@ -253,12 +257,12 @@
       "PackagePath": "staticwebassets/profilepics/9979521f-06e7-475f-8664-7731670ea0eb_YmpNelJ3.jpeg"
     },
     {
-      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/.gitkeep",
-      "PackagePath": "staticwebassets/uploads/.gitkeep"
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/profilepics/c70d40ae-eea2-486d-9b09-d2ad67473934_IMG_2633.jpg",
+      "PackagePath": "staticwebassets/profilepics/c70d40ae-eea2-486d-9b09-d2ad67473934_IMG_2633.jpg"
     },
     {
-      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4",
-      "PackagePath": "staticwebassets/uploads/5a375836-680b-4cc7-ade1-8fbc639dcde4_Untitled video - Made with Clipchamp.mp4"
+      "Id": "/workspaces/ProjectMVP/PlayNexus/wwwroot/uploads/.gitkeep",
+      "PackagePath": "staticwebassets/uploads/.gitkeep"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.PlayNexus.Microsoft.AspNetCore.StaticWebAssets.props",

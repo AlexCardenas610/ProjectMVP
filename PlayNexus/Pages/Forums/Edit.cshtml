@@ -1,0 +1,19 @@
+@page
+@model PlayNexus.Pages.Forums.EditModel
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+<h1>Edit Forum Post</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Topic">Topic</label>
+        <input type="text" id="Topic" name="Topic" class="form-control" value="@Model.Topic" required />
+    </div>
+    <div class="form-group">
+        <label for="PostContent">Post Content</label>
+        <textarea id="PostContent" name="PostContent" class="form-control" rows="4" required>@Model.PostContent</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

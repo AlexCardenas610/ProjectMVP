@@ -20,3 +20,120 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*
+PlayStation iconic colorway (lighter blue):
+- Primary: #2366d1 (lighter PlayStation blue)
+- Secondary: #e6e6e6 (light gray background)
+- Accent: #e60012 (red), #00a8e9 (light blue), #fcd116 (yellow), #00a651 (green)
+- Text: #fff (white) or #222 (dark gray)
+*/
+:root {
+  --ps-blue: #2366d1;
+  --ps-light-gray: #e6e6e6;
+  --ps-accent-red: #e60012;
+  --ps-accent-blue: #00a8e9;
+  --ps-accent-yellow: #fcd116;
+  --ps-accent-green: #00a651;
+  --ps-text-dark: #222;
+  --ps-text-light: #fff;
+  --ps-text-contrast: #fcd116;
+}
+body {
+  background: var(--ps-light-gray);
+  color: var(--ps-text-dark);
+}
+.navbar, .card-header, .btn-primary, .btn-success, .btn-warning, .btn-danger {
+  background: var(--ps-blue) !important;
+  color: var(--ps-text-light) !important;
+  border: none;
+}
+.btn-primary {
+  background: var(--ps-blue) !important;
+  color: var(--ps-text-contrast) !important;
+  font-weight: bold;
+}
+.btn-success {
+  background: var(--ps-accent-green) !important;
+  color: var(--ps-text-light) !important;
+}
+.btn-warning {
+  background: var(--ps-accent-yellow) !important;
+  color: var(--ps-text-dark) !important;
+}
+.btn-danger {
+  background: var(--ps-accent-red) !important;
+  color: var(--ps-text-light) !important;
+}
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,48,135,0.08);
+  border: none;
+}
+.card-header {
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: var(--ps-blue) !important;
+  color: var(--ps-text-contrast) !important;
+  border-radius: 16px 16px 0 0;
+}
+input, textarea, select {
+  border-radius: 8px !important;
+  border: 1px solid var(--ps-blue) !important;
+  color: var(--ps-text-dark) !important;
+  background: #fff !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--ps-accent-blue) !important;
+  box-shadow: 0 0 0 2px var(--ps-accent-blue, #00a8e9)33;
+}
+.list-group-item.active {
+  background: var(--ps-blue) !important;
+  color: var(--ps-text-contrast) !important;
+}
+a, .link {
+  color: var(--ps-accent-blue);
+}
+a:hover, .link:hover {
+  color: var(--ps-accent-red);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ps-blue);
+}
+::-webkit-scrollbar-track {
+  background: var(--ps-light-gray);
+}
+/* Sidebar/hub styling */
+.left-hub {
+  background: var(--ps-blue);
+  color: var(--ps-text-contrast);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,48,135,0.15);
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.left-hub .card, .left-hub .card-header, .left-hub .list-group-item {
+  background: transparent !important;
+  color: var(--ps-text-contrast) !important;
+  border: none;
+  box-shadow: none;
+}
+.left-hub .list-group-item {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.left-hub .list-group-item.active, .left-hub .list-group-item:hover {
+  background: var(--ps-accent-blue) !important;
+  color: var(--ps-text-light) !important;
+}
+.left-hub h2, .left-hub h3 {
+  color: var(--ps-accent-yellow);
+  margin-bottom: 1.5rem;
+}

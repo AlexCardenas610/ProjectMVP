@@ -1,32 +1,39 @@
 ﻿@page
-@model IndexModel
+@model PlayNexus.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Sign up or log in to create an account and explore the platform.</p>
-    <a class="btn btn-primary" href="/Account/Register">Sign Up</a>
-    <a class="btn btn-secondary" href="/Account/Login">Log In</a>
-</div>
-
-<div class="uploaded-clips">
-    <h2>Uploaded Clips</h2>
-    @if (Model.Clips != null && Model.Clips.Any()) {
-        <ul>
-            @foreach (var clip in Model.Clips) {
-                <li>
-                    <h3>@clip.Title</h3>
-                    <p>@clip.Description</p>
-                    <video width="320" height="240" controls>
-                        <source src="@Url.Content($"~/uploads/{clip.FileName}")" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </li>
+<div class="container mt-5">
+    <h1 class="mb-4">Welcome to PlayNexus</h1>
+    <p class="lead">Discover, share, and discuss the best gaming moments!</p>
+    <hr />
+    <h2 class="mb-3">Latest Community Clips</h2>
+    <div class="row">
+        @if (Model.Highlights != null && Model.Highlights.Any())
+        {
+            foreach (var clip in Model.Highlights)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <video class="card-img-top" controls style="max-height: 250px; object-fit: cover;">
+                            <source src="@clip.FileName" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="card-body">
+                            <h5 class="card-title">@clip.Title</h5>
+                            <p class="card-text">@clip.Description</p>
+                            <p class="card-text"><small class="text-muted">Uploaded by @clip.UserName on @clip.CreatedAt.ToShortDateString()</small></p>
+                        </div>
+                    </div>
+                </div>
             }
-        </ul>
-    } else {
-        <p>No clips have been uploaded yet.</p>
-    }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-muted">No clips have been uploaded yet. Be the first to share your highlight!</p>
+            </div>
+        }
+    </div>
 </div>
